@@ -1,11 +1,11 @@
 <?php
 
 /**
- *	Copyright (C)		: Doktersiaga
+ *	Copyright (C)			: Doktersiaga
  *	Developer			: Fatah Iskandar Akbar
  *	Email				: fatah@doktersiaga.com
  *	Date				: November 2020
- *	Nama Aplikasi		: Webhook Wablass to Dialogflow API
+ *	Nama Aplikasi			: Webhook Wablass to Dialogflow API
  *	Version				: 2.0
 **/
 
@@ -14,7 +14,7 @@ header("Content-Type: text/plain");
 date_default_timezone_set("Asia/Jakarta");
 
 $tgl 				= date('Y-m-d H:i:s');
-$id		 			= $_POST['id'];
+$id		 		= $_POST['id'];
 $name 				= $_POST['pushName'];
 $phone 				= $_POST['phone'];
 $message 			= str_replace("'","",strtolower($_POST['message']));
@@ -26,18 +26,18 @@ $dbpass 			= 'startuppedia66';
 $tipe_message		= 'text';
 $phone_owner		= '6285888036899'; #change
 $customer_id		= '29'; #change
-$bot_id				= '9'; #change 
-$page_id 			= 'rsi'; #change
-$source				= 'rsi';
-$tag				= strtolower($page_id); 
-$tag		   	   .= ",".strtolower(str_replace(" ", ",", $message));
-$token 				= 'N1V3cV95d9svKUMyVgXGsuBWwvi8IFQB0U4vBUX5pmMF6R3Do95ohFVYgVMEfZBA';
-$length 			= 45;
+$bot_id			= '9'; #change 
+$page_id 		= 'rsi'; #change
+$source			= 'rsi';
+$tag			= strtolower($page_id); 
+$tag		   	.= ",".strtolower(str_replace(" ", ",", $message));
+$token 			= 'N1V3cV95d9svKUMyVgXGsuBWwvi8IFQB0U4vBUX5pmMF6R3Do95ohFVYgVMEfZBA';
+$length 		= 45;
 $conversation_id	= substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,$length);
 $start_time 		= microtime(true);
 
 $welcome_msg		= "Hi\n\n<br><br>";
-$welcome_msg	   .= "Selamat datang di layanan chatbot Rumah Sakit Islam Cempaka Putih";
+$welcome_msg	   	.= "Selamat datang di layanan chatbot Rumah Sakit Islam Cempaka Putih";
 
 
 if(isset($_POST['message'])) {
